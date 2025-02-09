@@ -9,20 +9,24 @@ function bootstrap() {
     throw new Error(`No such env`);
   }
 
-  const { first_array, second_array }: IEnvInterfaces = JSON.parse(env);
+  try {
+    const { first_array, second_array }: IEnvInterfaces = JSON.parse(env);
 
-  const randomValueFirst = new RandomValues({
-    from: first_array[0],
-    to: first_array[1],
-  }).getRandomValue();
+    const randomValueFirst = new RandomValues({
+      from: first_array[0],
+      to: first_array[1],
+    }).getRandomValue();
 
-  const randomValueSecond = new RandomValues({
-    from: second_array[0],
-    to: second_array[1],
-  }).getRandomValue();
+    const randomValueSecond = new RandomValues({
+      from: second_array[0],
+      to: second_array[1],
+    }).getRandomValue();
 
-  console.log(`First random value: ${randomValueFirst}`);
-  console.log(`Second random value: ${randomValueSecond}`);
+    console.log(`First random value: ${randomValueFirst}`);
+    console.log(`Second random value: ${randomValueSecond}`);
+  } catch (error) {
+    console.log(`Error ${error}`);
+  }
 }
 
 bootstrap();
