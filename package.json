@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "typescript": "^5.7.3"
+  },
+  "name": "pull-req",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/main.js",
+  "devDependencies": {
+    "@types/node": "^22.13.1"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "start": "node ./dist/src/main.js",
+    "start:dev": "rm -rf dist && tsc && node ./dist/src/main.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
